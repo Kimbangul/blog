@@ -3,7 +3,7 @@
     // ../ -> 부모(상위) 폴더로
 ?>
 <?php
-  $conn = mysqli_connect("localhost", "root", "", "site", 3306);
+  $conn = mysqli_connect("site102.blog.oa.gg", "site102", "sbs123414", "site102", 3306);
 
   mysqli_query($conn, "SET NAMES utf8mb4;");
   // 인코딩

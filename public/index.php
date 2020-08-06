@@ -2,7 +2,7 @@
     include "../part/head.php";
 
     // 전화 연결
-$dbConn = mysqli_connect("localhost", "root", "", "site", 3306) or die("DB CONNECTION ERROR");
+$dbConn =  mysqli_connect("site102.blog.oa.gg", "site102", "sbs123414", "site102", 3306);
 
 // 할말 적기, 최근 게시글 불러오기
 $sql = "

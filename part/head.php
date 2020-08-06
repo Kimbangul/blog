@@ -1,6 +1,6 @@
 <?php
 // 전화 연결
-$dbConn = mysqli_connect("localhost", "root", "", "site", 3306) or die("DB CONNECTION ERROR");
+$dbConn =  mysqli_connect("site102.blog.oa.gg", "site102", "sbs123414", "site102", 3306);
 mysqli_query($dbConn, "SET NAMES utf8mb4;");
 // 인코딩
 

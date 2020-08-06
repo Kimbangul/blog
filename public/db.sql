@@ -2,9 +2,9 @@
 SET NAMES utf8mb4;
 
 # DB 생성
-DROP DATABASE IF EXISTS site;
-CREATE DATABASE site;
-USE site;
+DROP DATABASE IF EXISTS site102;
+CREATE DATABASE site102;
+USE site102;
 
 
 
@@ -19,7 +19,9 @@ CREATE TABLE article(
     # tinyint = 작은 정수     
     cateItemId INT(10) UNSIGNED NOT NULL,
     title CHAR(250) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+    summary CHAR(250) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci,
     `body` LONGTEXT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+   
 );
 
 #카테고리 아이템 테이블 생성
@@ -41,7 +43,9 @@ INSERT INTO cateItem SET regDate = NOW(), `name` = 'Bangul';
 
 #게시물 추가
 INSERT INTO article SET regDate = NOW(), updateDate = NOW(), cateItemId = 2,
-title = '제목', `body` = '';
+title = '제목', `body` = 'test';
 
 INSERT INTO article SET regDate = NOW(), updateDate = NOW(), cateItemId = 3,
-title = '제목', `body` = '';
+title = '제목', `body` = 'test';
+
+
