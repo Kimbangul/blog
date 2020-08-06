@@ -99,7 +99,7 @@ while (true){
     <header class="con">
         <nav class="con-max-width margin-0-auto flex flex-jc-b">
             <div class="logo flex"><a class="flex flex-ai-c" href="/">
-                    <img src="resource/img/logo.png" alt="">
+                    <img src="https://kimbangul.github.io/img1/blog/common/logo.png" alt="">
                 </a></div>
             <div class="menu slideOpenClose flex"><a class="flex flex-ai-c" href="#">
                     <div class="menu-btn ">
@@ -122,7 +122,7 @@ while (true){
                 </a>
                 </div>
                 <div class="logo"><a class="flex flex-ai-c" href="/">
-                    <img src="resource/img/logo.png" alt=""></div>
+                    <img src="https://kimbangul.github.io/img1/blog/common/logo.png" alt=""></div>
                 <ul class="menu-item sehyun">
 
                     <li><a href="/">HOME</a></li>

@@ -72,7 +72,7 @@
 </div>
 
 <div class="img-box">
-    <img class="margin-0-auto noselect" src="resource/img/bangul_main.gif" alt="bangul">
+    <img class="margin-0-auto noselect" src="https://kimbangul.github.io/img1/blog/common/bangul_main.gif" alt="bangul">
 </div>
 
 </div>

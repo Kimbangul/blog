@@ -52,7 +52,7 @@ while (true){
                 <div class="char-text-tri"></div>
             </div>
             <div class="char">
-                <img class="margin-0-auto noselect" src="resource/img/bangul_main.gif" alt="bangul">
+                <img class="margin-0-auto noselect" src="https://kimbangul.github.io/img1/blog/common/bangul_main.gif" alt="bangul">
             </div>
         </div>
         <div class="main-title sehyun noselect">
