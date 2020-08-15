@@ -56,82 +56,112 @@ while (true){
 // http://localhost:8022/list_test.php?cateItemId=1
 ?>
 
-<section id="article">
+<section id="contents">
 
+<div id="main">
+        <div class="con cate-item-name-box con-max-width">
+            <div class="text-box cate-item-name sans noselect">
+            <?=$cateItemName?>
+            </div>
 
-    <div class="section con-max-width margin-0-auto">
-        <div class="con section-title sehyun noselect">
-            <h1><?=$cateItemName?></h1>
+            <div class="img-box-wrap flex">
+                <div class="img-box noselect">
+                    <img src="resource/img/bangul.png" alt="bangul">
+                </div>
+                <div class="img-box noselect pc">
+                    <img src="resource/img/bangul.png" alt="bangul">
+                </div>
+                <div class="img-box noselect pc">
+                    <img src="resource/img/bangul.png" alt="bangul">
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <?php
-    if(empty($articleRows)){
+
+    <div class="list con-max-width con-padding margin-0-auto">
+
+    <div class="article-box-wrap flex flex-jc-c">
+            
+            <?php
+            if(empty($articleRows)){
         
-?>
-        <div class="con" style="text-align: center;">
-            게시물이 존재하지 않습니다.
-        </div>
-        <?php
-  }  else{ ?>
+                ?>
+            <div class="con no-article namsan" style="text-align:center;">
+                게시물이 존재하지 않습니다.
+            </div>
+            <?php
+            }  else{ 
+                 foreach ($articleRows as $article){?>
+            <a class="article" href="/detail.php?id=<?=$article['id']?>">
+                <div class="article-box flex">
 
+                    <div class="article-thumbnail">
+                        <div class="img-box">
+                        <?php
+                        if (empty($article['thumbImgUrl'])){?>
 
-        <div class="article-box list-article-box cons sans con-max-width margin-0-auto">
+                        <img src="https://kimbangul.github.io/img1/blog/common/thumbimg.png" alt="thumbnail">
+                        
 
-            <ul>
-                <?php foreach ($articleRows as $article){?>
-                <li class="margin-0-auto">
-                    <a class="flex flex-jc-c margin-0-auto" href="./detail.php?id=<?=$article['id']?>">
-                        <div class="thumbnail"><img src="<?=$article['thumbImgUrl']?>" alt="thumbnail"><br></div>
+                        <?php
+                    } else{
+                        ?>
+                        
+                        <img src="<?=$article['thumbImgUrl']?>" alt="thumbnail">
 
-                        <div class="article">
-                            <div class="article-title"> <?=$article['title']?></div>
-                            <div class="article-summary">
+                        <?php
+                        }
+                        ?>
+                        </div>
+                    </div>
 
-                                <div class="article-info">
+                    <div class="article-body namsan sans flex flex-jc-b">
 
-                                    번호 : <?=$article['id']?> <br>
-                                    작성날짜 : <?=$article['regDate']?> <br>
-                                </div>
-
-                                <?php
+                        <h4 class="title flex flex-ai-c"><span class="title"><?=$article['title']?></span>
+                            <span class="date pc"><?=$article['regDate']?></span>
+                        </h4>
+                        <div class="summary flex flex-ai-c">
+                        <?php
                             if (empty($article['summary'])){                                
                             ?>
-                                <?=$article['body']?>
-                                <?php
+                            <?=$article['body']?>
+                            <?php
                             } else{
                             ?>
 
-                                <?=$article['summary']?>
-                                <?php } ?>
-
-                            </div>
-
-                            <span class="view">Read more <i class="fas fa-angle-right"></i></span>
+                            <?=$article['summary']?>
+                            <?php } ?>
                         </div>
+                        <div class="more flex flex-ai-c flex-jc-e">
+                        <span >more</span>
+                        <i class="fas fa-angle-right"></i>
+                        </div>
+                        
 
 
+                    </div>
+
+                </div>
+            </a>
+
+                 <?php } ?>
+             <?php } ?>
+
+           
+
+ 
 
 
-
-                    </a>
-                </li>
-
-                <?php
-}    
-?>
-
-            </ul>
-
-
-        </div>
-
-        <?php }
-?>
+            </div>
+ 
+  
     </div>
 
 
 
-
+</section>
     <?php
     include "../part/foot.php";
 ?>

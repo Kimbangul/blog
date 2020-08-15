@@ -45,24 +45,25 @@
 <!-- 토스트 UI 에디터, CSS 코어 -->
 <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
 
-<section id="article">
+<section id="contents">
 
 
 
-<div class="section detail con-max-width margin-0-auto">
+<div class="detail con-max-width con-padding">
 <?php
     if(empty($row)){
         
 ?>
-        <div class="con" style="text-align: center;">
+        <div class="con no-article namsan" style="text-align: center;">
             게시물이 존재하지 않습니다.
         </div>
         <?php
   }  else{ ?>
 
 <div class="article_info sans">
-<h1 class="con article_title sehyun"><?=$row['title']?></h1>
+<h1 class="con article_title namsan"><?=$row['title']?></h1>
 <div class="flex info-wrap">
+    <span>글 번호 : <?=$row['id']?> </span>
     <span>등록날짜 : <?=$row['regDate']?>    </span>
     <span>수정날짜 : <?=$row['updateDate']?></span>
     <span>작성자 : 김방울</span>
@@ -71,8 +72,8 @@
 
 </div>
 
-<div class="img-box">
-    <img class="margin-0-auto noselect" src="https://kimbangul.github.io/img1/blog/common/bangul_main.gif" alt="bangul">
+<div class="img-box pc">
+    <img class="margin-0-auto noselect" src="resource/img/bangul.png" alt="bangul">
 </div>
 
 </div>
@@ -96,13 +97,13 @@
       });
 </script>
 
-<div class="back-btn sans"><span><a href="/list.php?cateItemId=<?=$row['cateItemId']?>"><i class="far fa-hand-point-left"></i> 리스트로</a></span></div>
+<div class="back-btn namsan"><span><a href="/list.php?cateItemId=<?=$row['cateItemId']?>"><i class="far fa-hand-point-left"></i> 리스트로</a></span></div>
 <?php
 }    
 ?>
 
 </div>
-
+</section>
 
 
 <?php
