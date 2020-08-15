@@ -82,7 +82,7 @@ while (true){
 
     <div class="list con-max-width con-padding margin-0-auto">
 
-    <div class="article-box-wrap flex flex-jc-c">
+    <div class="article-box-wrap flex ">
             
             <?php
             if(empty($articleRows)){

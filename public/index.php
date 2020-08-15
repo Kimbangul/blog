@@ -74,7 +74,7 @@ include "../part/head.php";
             <h2 class="title namsan noselect">
             <i class="fas fa-fish"></i>  Recent articles <i class="fas fa-fish"></i>
             </h2>
-            <div class="article-box-wrap flex flex-jc-c">
+            <div class="article-box-wrap flex">
             
             <?php
             if(empty($articleRows)){

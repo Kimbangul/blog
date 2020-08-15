@@ -61,7 +61,7 @@
   }  else{ ?>
 
 <div class="article_info sans">
-<h1 class="con article_title namsan"><?=$row['title']?></h1>
+<h1 class="con flex article_title namsan"><?=$row['title']?></h1>
 <div class="flex info-wrap">
     <span>글 번호 : <?=$row['id']?> </span>
     <span>등록날짜 : <?=$row['regDate']?>    </span>
