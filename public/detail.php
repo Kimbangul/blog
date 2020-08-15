@@ -83,7 +83,7 @@
 <script type="text/x-template" style="display:none;" id="origin1">
 <?=$row['body']?>
 </script>
-<div class="con" id ="viewer1"> 
+<div class="con sans" id ="viewer1"> 
        
 </div>
 
