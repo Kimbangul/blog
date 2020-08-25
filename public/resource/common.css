@@ -678,7 +678,7 @@ ul.social > li > a:hover{
 }
 
 #slide-menu-wrap > div.slide-menu-body  ul.cate-menu ul.submenu > li{
-    margin: 10px 0;
+    margin: 17px 0;
     -webkit-transition: margin-left 0.35s, color 0.5s;
     -o-transition: margin-left 0.35s, color 0.5s;
     transition: margin-left 0.35s, color 0.5s;
@@ -776,7 +776,7 @@ ul.social > li > a:hover{
     } */
 
     #slide-menu-wrap > div.slide-menu-body ul.cate-menu ul.submenu > li{
-        margin: 15px 0;
+        margin: 17px 0;
     }
 
     #slide-menu-wrap div.close-btn{
@@ -964,7 +964,7 @@ div#main .img-box-wrap > div.img-box:nth-child(3){
  .article-box-wrap > a.article{
     width: 25%;
     padding: 0 10px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     -webkit-transition: width 0.5s;
     -o-transition: width 0.5s;
     transition: width 0.5s;
@@ -975,8 +975,8 @@ div#main .img-box-wrap > div.img-box:nth-child(3){
     min-width: 200px;
     max-width: 250px;
     position: relative;
-    -webkit-box-shadow: 10px 10px 15px rgba(0,0,0,0.16);
-            box-shadow: 10px 10px 15px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 10px 10px 15px rgba(0,0,0,0.08);
+            box-shadow: 10px 10px 15px rgba(0,0,0,0.08);
     margin: 0 auto;
   
 }
@@ -1085,6 +1085,11 @@ div#main .img-box-wrap > div.img-box:nth-child(3){
     margin-left: 5px;
 }
 
+@media(min-width: 1001px){
+    #recent-articles .article-box-wrap > a.article:last-child{      
+       display: none;
+    }
+}
 
 @media(max-width: 1000px){
      .article-box-wrap > a.article{
@@ -1103,7 +1108,7 @@ div#main .img-box-wrap > div.img-box:nth-child(3){
     }
 
      .article-box-wrap > a.article{
-        margin-bottom: 30px; 
+        margin-bottom: 60px; 
     }
 
     .article-box-wrap .article-box > .article-body > h4.title{
@@ -1162,7 +1167,7 @@ div#main .img-box-wrap > div.img-box:nth-child(3){
 /* 푸터 시작 */
 
 footer{
-    background-color: #D5B8B8;
+    background-color: #9B8181;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1414,6 +1419,7 @@ div.list .article-box-wrap .article-box > .article-body > h4.title {
     -ms-flex-pack: justify;
         justify-content: space-between;
 }
+
 
 
 

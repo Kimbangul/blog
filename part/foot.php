@@ -2,7 +2,7 @@
     <div class="con con-max-width con-padding flex flex-ai-c flex-jc-c">
 
         <div class="text-box namsan noselect">
-        <i class="fas fa-pen"></i> DESIGNED BY PARK YE RIM, 2020.
+        <i class="fas fa-cat"></i> DESIGNED BY KIM BANG UL, 2020.
         </div>
         <ul class="social flex flex-jc-e mb">
                 <li><a target="_blank" href="https://www.instagram.com/y_e_r_i_m_e/"><i
