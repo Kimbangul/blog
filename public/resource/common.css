@@ -1167,7 +1167,7 @@ div#main .img-box-wrap > div.img-box:nth-child(3){
 /* 푸터 시작 */
 
 footer{
-    background-color: #9B8181;
+    background-color: #dcb6b5;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1183,7 +1183,7 @@ footer > div.con{
 }
 
 footer > div.con  .text-box{
-    color: #fff;
+    color: #9B8181;
     font-size: 1.7rem;
     -webkit-transition: font-size 0.5s;
     -o-transition: font-size 0.5s;
