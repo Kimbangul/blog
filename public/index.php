@@ -8,9 +8,10 @@ include "../part/head.php";
     // 할말 적기, 최근 게시글 불러오기
     $sql = "
         SELECT *
-        FROM article   
-        ORDER BY ID DESC
-        limit 9;    
+        FROM article
+        WHERE displayStatus = 1 AND delstatus = 0
+        ORDER BY ID DESC 
+        LIMIT 9    
     ";
     $rs = mysqli_query($dbConn, $sql);
     
@@ -25,7 +26,7 @@ include "../part/head.php";
     
     $sql = "
         SELECT *
-        FROM cateItem 
+        FROM board 
         ORDER BY id;
     ";
     

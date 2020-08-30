@@ -11,30 +11,30 @@ $dbConn = mysqli_connect("site102.blog.oa.gg", "site102", "sbs123414", "site102"
 
 // 전화연결이 성공했다면 이 부분 싱행
 
-if ( isset($_GET['cateItemId']) == false){
-    $_GET['cateItemId'] = 1;
+if ( isset($_GET['boardId']) == false){
+    $_GET['boardId'] = 1;
 }
-$cateItemId = $_GET['cateItemId'];
+$boardId = $_GET['boardId'];
 
 
 
 // 상대방에게 할말 적기
 $sql = "
   SELECT `name`
-  FROM cateItem
-  WHERE id = '{$cateItemId}';
+  FROM board
+  WHERE id = '{$boardId}';
 ";
 
 $rs = mysqli_query($dbConn, $sql); 
 //   쿼리 실행
  $row = mysqli_fetch_assoc($rs);
 //   압축 해....제?
-$cateItemName = $row['name'];
+$boardName = $row['name'];
  
 $sql = "
     SELECT *
     FROM article
-    WHERE cateItemId = '{$cateItemId}'
+    WHERE boardId = '{$boardId}' AND displayStatus = 1 AND delstatus = 0
     ORDER BY ID DESC    
 ";
 
@@ -61,7 +61,7 @@ while (true){
 <div id="main">
         <div class="con cate-item-name-box con-max-width">
             <div class="text-box cate-item-name sans noselect">
-            <?=$cateItemName?>
+            <?=$boardName?>
             </div>
 
             <div class="img-box-wrap flex">

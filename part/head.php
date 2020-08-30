@@ -5,13 +5,13 @@ mysqli_query($dbConn, "SET NAMES utf8mb4;");
 
 $sql = "
   SELECT *
-  FROM cateItem
+  FROM board
   ORDER BY ID 
 ";
 
 $rs = mysqli_query($dbConn, $sql); 
 
-$cateRows = [];
+$boardRows = [];
 while (true){
     $row = mysqli_fetch_assoc($rs);
 
@@ -19,7 +19,7 @@ while (true){
         break;
     }
 
-    $cateRows[] = $row;
+    $boardRows[] = $row;
 }
 
 
@@ -101,9 +101,9 @@ while (true){
                     <li><a href="/">HOME</a></li>
                     <li>Category
                         <ul class="submenu">
-                        <?php foreach ($cateRows as $cateItem){?>
+                        <?php foreach ($boardRows as $boardItem){?>
                             <li>
-                             <a href="/list.php?cateItemId=<?=$cateItem['id']?>"><?=$cateItem['name']?></a>
+                             <a href="/list.php?boardId=<?=$boardItem['id']?>"><?=$boardItem['name']?></a>
                          </li>
                            <?php
                                 }    

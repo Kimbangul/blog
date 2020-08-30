@@ -1,0 +1,122 @@
+/* 폰트 */
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html{
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* normal */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: inherit;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+/* lib */
+
+.con{
+
+    margin: 0 auto;
+}
+
+
+.height-100p{
+    height: 100%;
+}
+
+.img-box > img{
+    width: 100%;
+    display: block;
+}
+
+.flex{
+    display:flex;
+
+}
+
+.flex-ai-c{
+    align-items: center;
+}
+
+.flex-jc-c{
+    justify-content: center;
+}
+
+.flex-jc-sb{
+    justify-content: space-around;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+/* 테이블 관련 */
+
+.table-box > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-box > table th, .table-box > table td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* 폼 관련 */
+
+.form1 .form-control > input,
+.form1 .form-control > select{
+    width: 100%;
+    display: block;
+    padding: 5px;
+}
+
+/* 버튼 */
+.btn{
+    display: inline-flex;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    background: #3D94F6;
+    cursor: pointer;
+}
+
+
+.btn:hover{
+    background: #1E62D0;
+}
+
+.btn-success{
+    background: green;
+}
+
+.btn-danger{
+    background: coral;
+}
+
+.ratio-16-9::after {
+    content:"";
+    display: block;
+    padding-top:56.25%;
+}
+
+.relative {
+    position: relative;
+}
+
+.abs-full {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+} 
