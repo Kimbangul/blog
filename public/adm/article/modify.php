@@ -98,6 +98,14 @@ function ArticleModifyForm__submit(form) {
                 </td>
             </tr>
             <tr>
+                <th>썸네일 이미지 url</th>
+                <td>
+                    <div class="form-control">
+                    <input type="url" name="thumbImgUrl" placeholder="썸네일 이미지" value="<?=$article['thumbImgUrl']?>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
                 <th>본문</th>
                 <td>
                     <div class="form-control">

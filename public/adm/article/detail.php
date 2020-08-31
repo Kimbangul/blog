@@ -41,6 +41,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/../part/toastUiEditor.php';
                 </td>
             </tr>
             <tr>
+                <th>썸네일 이미지 url</th>
+                <td>
+                    <?=$article['thumbImgUrl']?>
+                </td>
+            </tr>
+            <tr>
                 <th>본문</th>
                 <td>
                     <script type="text/x-template"><?=$article['body']?></script>

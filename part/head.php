@@ -1,26 +1,7 @@
 <?php
+require_once __DIR__ . '/../app/publicApp.php';
 
-$dbConn =  mysqli_connect("site102.blog.oa.gg", "site102", "sbs123414", "site102", 3306);
-mysqli_query($dbConn, "SET NAMES utf8mb4;");
-
-$sql = "
-  SELECT *
-  FROM board
-  ORDER BY ID 
-";
-
-$rs = mysqli_query($dbConn, $sql); 
-
-$boardRows = [];
-while (true){
-    $row = mysqli_fetch_assoc($rs);
-
-    if ($row == null){
-        break;
-    }
-
-    $boardRows[] = $row;
-}
+$boardRows = ArticleService::getForPrintBoards();
 
 
 ?>
@@ -42,12 +23,12 @@ while (true){
     <!-- jquery 로드 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- scrollmagic 로드 -->
+    <!-- scrollmagic 로드
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
 
     <link rel="stylesheet" href="resource/common.css">
     <script src="resource/common.js"></script>

@@ -2,14 +2,7 @@
     include "../part/head.php";
     // ../ -> 부모(상위) 폴더로
 
-    // 전화 연결
-$dbConn = mysqli_connect("site102.blog.oa.gg", "site102", "sbs123414", "site102", 3306);
 
-//  3	Bangul
-//  2	Illust
-//  1	Web Design
-
-// 전화연결이 성공했다면 이 부분 싱행
 
 if ( isset($_GET['boardId']) == false){
     $_GET['boardId'] = 1;
@@ -18,42 +11,9 @@ $boardId = $_GET['boardId'];
 
 
 
-// 상대방에게 할말 적기
-$sql = "
-  SELECT `name`
-  FROM board
-  WHERE id = '{$boardId}';
-";
+$articleRows = ArticleService::getArticleInCategoryPublic($boardId);
+$board = ArticleService::getBoardById($boardId);
 
-$rs = mysqli_query($dbConn, $sql); 
-//   쿼리 실행
- $row = mysqli_fetch_assoc($rs);
-//   압축 해....제?
-$boardName = $row['name'];
- 
-$sql = "
-    SELECT *
-    FROM article
-    WHERE boardId = '{$boardId}' AND displayStatus = 1 AND delstatus = 0
-    ORDER BY ID DESC    
-";
-
-$rs = mysqli_query($dbConn, $sql);
-
-$articleRows = [];
-while (true){
-    $row = mysqli_fetch_assoc($rs);
-    if ($row == null){
-        break;
-    }
-    $articleRows[] = $row;
-}
-
-
-
-
-
-// http://localhost:8022/list_test.php?cateItemId=1
 ?>
 
 <section id="contents">
@@ -61,7 +21,7 @@ while (true){
 <div id="main">
         <div class="con cate-item-name-box con-max-width">
             <div class="text-box cate-item-name sans noselect">
-            <?=$boardName?>
+            <?=$board['name']?>
             </div>
 
             <div class="img-box-wrap flex">

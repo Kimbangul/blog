@@ -9,6 +9,7 @@ class ArticleService {
         return ArticleDao::getBoardByCode($id);
     }
 
+
     public static function getBoardById(int $id) {
         return ArticleDao::getBoardById($id);
     }
@@ -35,6 +36,14 @@ class ArticleService {
 
     public static function modifyArticle($args) {
         return ArticleDao::modifyArticle($args);
+    }
+
+    public static function getArticleAllPublic() : array{
+        return ArticleDao::getArticleAllPublic();
+    }
+
+    public static function getArticleInCategoryPublic($boardId) : array{
+        return ArticleDao::getArticleInCategoryPublic($boardId);
     }
 
     public static function writeArticle($args) : int {

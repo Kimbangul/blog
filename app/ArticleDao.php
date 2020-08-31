@@ -9,6 +9,8 @@ class ArticleDao {
         return DB__getDBRow($sql);
     }
 
+
+
     public static function makeBoard($args) : int {
         $sql = "
         INSERT INTO board
@@ -30,6 +32,7 @@ class ArticleDao {
         `boardId` = '${args['boardId']}',
         `title` = '${args['title']}',
         `body` = '${args['body']}'
+        `thumbImgUrl` = '${args['thumbImgUrl']}'
         ";
         
         return DB__insert($sql);
@@ -76,6 +79,10 @@ class ArticleDao {
             , boardId = '{$args['boardId']}'
             ";
         }
+        
+        $sql .= "
+        , thumbImgUrl = '{$args['thumbImgUrl']}'
+        ";
 
         $sql .= "
         WHERE id = '${args['id']}'
@@ -101,6 +108,29 @@ class ArticleDao {
         ";
         return DB__getDBRow($sql);
     }
+
+    public static function getArticleAllPublic(): array {
+        $sql = "
+        SELECT *
+        FROM article
+        WHERE displayStatus = 1 AND delstatus = 0
+        ORDER BY ID DESC
+        LIMIT 9
+        ";
+        return DB__getDBRows($sql);
+    }
+
+    public static function getArticleInCategoryPublic($boardId): array{
+     
+        $sql = "
+        SELECT *
+        FROM article
+        WHERE boardId = '{$boardId}' AND displayStatus = 1 AND delstatus = 0
+        ORDER BY ID DESC    
+        ";
+        return DB__getDBRows($sql);
+    }
+
 
     public static function getArticleById(int $id) {
         $sql = "

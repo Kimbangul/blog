@@ -1,7 +1,7 @@
 <footer>
     <div class="con con-max-width con-padding flex flex-ai-c flex-jc-c">
 
-        <div class="text-box namsan bold noselect">
+        <div class="text-box namsan noselect">
         <i class="fas fa-cat"></i> DESIGNED BY KIM BANG UL, 2020.
         </div>
         <ul class="social flex flex-jc-e mb">
