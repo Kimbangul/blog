@@ -5,6 +5,10 @@ include "../part/head.php";
     
     $articleRows = ArticleService::getArticleAllPublic();      
 
+    $_REQUEST['displayStatus'] = '__ALL__';
+    $listData = ArticleService::getForPrintListDataPublicAll($_REQUEST);
+    $articles = $listData['articles'];
+    $totalPage = $listData['totalPage'];
 ?>
 
 <section id="contents">
@@ -36,12 +40,12 @@ include "../part/head.php";
     <div id="recent-articles">
         <div class="con con-padding con-max-width">
             <h2 class="title namsan noselect">
-            <i class="fas fa-fish"></i>  Recent articles <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>  All articles <i class="fas fa-fish"></i>
             </h2>
             <div class="article-box-wrap flex">
             
             <?php
-            if(empty($articleRows)){
+            if(empty($articles)){
         
                 ?>
             <div class="con namsan no-article" style="text-align:center;">
@@ -49,7 +53,7 @@ include "../part/head.php";
             </div>
             <?php
             }  else{ 
-                 foreach ($articleRows as $article){?>
+                 foreach ($articles as $article){?>
             <a class="article" href="/detail.php?id=<?=$article['id']?>">
                 <div class="article-box">
 
@@ -118,6 +122,12 @@ include "../part/head.php";
     </div>
 
     <!-- 최근 글 끝 -->
+
+    <div class="con-max-width sans count-box flex flex-jc-c">
+    <?php for ( $i = 1; $i <= $totalPage; $i++ ) { ?>
+        <a class="count flex flex-ai-c flex-jc-c" href="<?=getNewUri($_SERVER['REQUEST_URI'], 'page', $i)?>"><?=$i?></a>
+    <?php } ?>
+    </div>
 
 </section>
 

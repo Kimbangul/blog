@@ -196,6 +196,81 @@ class ArticleDao {
         return DB__getDBRowIntValue($sql, 0);
     }
 
+
+    public static function getForPrintListArticlesCountPublic($args) : int {
+        $boardId = $_GET['boardId'];
+        $sql = "
+        SELECT COUNT(*) AS cnt
+        FROM article
+        WHERE 1
+        AND boardId = '{$boardId}'
+        AND delStatus = 0 
+        AND displayStatus = 1
+        ";
+
+        if ( isE($args, 'displayStatus') and $args['displayStatus'] !== '__ALL__' ) {
+            $sql .= "
+            AND displayStatus = '{$args['displayStatus']}'
+            ";
+        }
+
+        if ( isE($args, 'boardId') ) {
+            $sql .= "
+            AND boardId = '{$args['boardId']}'
+            ";
+        }
+
+        if ( isE($args, 'title') ) {
+            $sql .= "
+            AND title LIKE CONCAT('%', '{$args['title']}', '%')
+            ";
+        }
+
+        if ( isE($args, 'body') ) {
+            $sql .= "
+            AND body LIKE CONCAT('%', '{$args['body']}', '%')
+            ";
+        }
+
+        return DB__getDBRowIntValue($sql, 0);
+    }
+
+    public static function getForPrintListArticlesCountPublicAll($args) : int {
+        $sql = "
+        SELECT COUNT(*) AS cnt
+        FROM article
+        WHERE 1
+        AND delStatus = 0 
+        AND displayStatus = 1
+        ";
+
+        if ( isE($args, 'displayStatus') and $args['displayStatus'] !== '__ALL__' ) {
+            $sql .= "
+            AND displayStatus = '{$args['displayStatus']}'
+            ";
+        }
+
+        if ( isE($args, 'boardId') ) {
+            $sql .= "
+            AND boardId = '{$args['boardId']}'
+            ";
+        }
+
+        if ( isE($args, 'title') ) {
+            $sql .= "
+            AND title LIKE CONCAT('%', '{$args['title']}', '%')
+            ";
+        }
+
+        if ( isE($args, 'body') ) {
+            $sql .= "
+            AND body LIKE CONCAT('%', '{$args['body']}', '%')
+            ";
+        }
+
+        return DB__getDBRowIntValue($sql, 0);
+    }
+
     public static function getForPrintListArticles($args) {
         $sql = "
         SELECT A.*, B.name AS boardName
@@ -204,6 +279,89 @@ class ArticleDao {
         ON A.boardId = B.id
         WHERE 1
         AND delStatus = 0
+        ";
+
+        if ( isE($args, 'displayStatus') and $args['displayStatus'] !== '__ALL__' ) {
+            $sql .= "
+            AND A.displayStatus = '{$args['displayStatus']}'
+            ";
+        }
+
+        if ( isE($args, 'boardId') ) {
+            $sql .= "
+            AND boardId = '{$args['boardId']}'
+            ";
+        }
+
+        if ( isE($args, 'title') ) {
+            $sql .= "
+            AND title LIKE CONCAT('%', '{$args['title']}', '%')
+            ";
+        }
+
+        if ( isE($args, 'body') ) {
+            $sql .= "
+            AND body LIKE CONCAT('%', '{$args['body']}', '%')
+            ";
+        }
+
+        $sql .= "
+        ORDER BY A.id DESC
+        LIMIT {$args['limitFrom']}, {$args['limitTake']}
+        ";
+        return DB__getDBRows($sql);
+    }
+
+
+    public static function getForPrintListArticlesPublic($args) {
+        $sql = "
+        SELECT A.*, B.name AS boardName
+        FROM article AS A
+        INNER JOIN board AS B
+        ON A.boardId = B.id
+        WHERE 1
+        AND delStatus = 0
+        AND displayStatus = 1
+        ";
+
+        if ( isE($args, 'displayStatus') and $args['displayStatus'] !== '__ALL__' ) {
+            $sql .= "
+            AND A.displayStatus = '{$args['displayStatus']}'
+            ";
+        }
+
+        if ( isE($args, 'boardId') ) {
+            $sql .= "
+            AND boardId = '{$args['boardId']}'
+            ";
+        }
+
+        if ( isE($args, 'title') ) {
+            $sql .= "
+            AND title LIKE CONCAT('%', '{$args['title']}', '%')
+            ";
+        }
+
+        if ( isE($args, 'body') ) {
+            $sql .= "
+            AND body LIKE CONCAT('%', '{$args['body']}', '%')
+            ";
+        }
+
+        $sql .= "
+        ORDER BY A.id DESC
+        LIMIT {$args['limitFrom']}, {$args['limitTake']}
+        ";
+        return DB__getDBRows($sql);
+    }
+
+    public static function getForPrintListArticlesPublicAll($args) {
+        $sql = "
+        SELECT A.*
+        FROM article AS A
+        WHERE 1
+        AND delStatus = 0
+        AND displayStatus = 1
         ";
 
         if ( isE($args, 'displayStatus') and $args['displayStatus'] !== '__ALL__' ) {

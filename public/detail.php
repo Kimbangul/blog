@@ -97,7 +97,7 @@
       });
 </script>
 
-<div class="back-btn namsan"><span><a href="/list.php?cateItemId=<?=$row['boardId']?>"><i class="far fa-hand-point-left"></i> 리스트로</a></span></div>
+<div class="back-btn namsan"><span><a href="/list.php?boardId=<?=$row['boardId']?>"><i class="far fa-hand-point-left"></i> 리스트로</a></span></div>
 <?php
 }    
 ?>

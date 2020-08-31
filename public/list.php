@@ -9,6 +9,10 @@ if ( isset($_GET['boardId']) == false){
 }
 $boardId = $_GET['boardId'];
 
+$_REQUEST['displayStatus'] = '__ALL__';
+$listData = ArticleService::getForPrintListDataPublic($_REQUEST);
+$articles = $listData['articles'];
+$totalPage = $listData['totalPage'];
 
 
 $articleRows = ArticleService::getArticleInCategoryPublic($boardId);
@@ -45,7 +49,7 @@ $board = ArticleService::getBoardById($boardId);
     <div class="article-box-wrap flex ">
             
             <?php
-            if(empty($articleRows)){
+            if(empty($articles)){
         
                 ?>
             <div class="con no-article namsan" style="text-align:center;">
@@ -53,7 +57,7 @@ $board = ArticleService::getBoardById($boardId);
             </div>
             <?php
             }  else{ 
-                 foreach ($articleRows as $article){?>
+                 foreach ($articles as $article){?>
             <a class="article" href="/detail.php?id=<?=$article['id']?>">
                 <div class="article-box flex">
 
@@ -120,7 +124,12 @@ $board = ArticleService::getBoardById($boardId);
     </div>
 
 
-
+    <div class="con-max-width sans count-box flex flex-jc-c">
+    <?php for ( $i = 1; $i <= $totalPage; $i++ ) { ?>
+        <a class="count flex flex-ai-c flex-jc-c" href="<?=getNewUri($_SERVER['REQUEST_URI'], 'page', $i)?>"><?=$i?></a>
+    <?php } ?>
+    </div>
+    
 </section>
     <?php
     include "../part/foot.php";
