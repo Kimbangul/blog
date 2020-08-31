@@ -47,6 +47,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/../part/toastUiEditor.php';
                 </td>
             </tr>
             <tr>
+                <th>요약</th>
+                <td>
+                    <?=$article['summary']?>
+                </td>
+            </tr>
+            <tr>
                 <th>본문</th>
                 <td>
                     <script type="text/x-template"><?=$article['body']?></script>

@@ -7,7 +7,7 @@
         <ul class="social flex flex-jc-e mb">
                 <li><a target="_blank" href="https://www.instagram.com/y_e_r_i_m_e/"><i
                             class="fab fa-instagram"></i></a></li>
-                <li><a target="_blank" href="https://twitter.com/kim_bang_ul"><i class="fab fa-twitter"></i></a></li>
+                <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a target="_blank" href="https://github.com/Kimbangul"><i class="fab fa-github"></i></a></li>
             </ul>
 

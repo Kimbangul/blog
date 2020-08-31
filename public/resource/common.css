@@ -366,6 +366,8 @@ border-radius: 7.5px;
     padding: 30px 0;
     margin-bottom: 50px;
 }
+
+
 #contents div.count-box > a.count{
     font-size: 1.5rem;
     width: 30px;
@@ -380,6 +382,18 @@ border-radius: 7.5px;
 
 #contents div.count-box > a.count:hover{
     opacity: 1;
+}
+
+
+#contents div.search-box .icon{
+    padding: 0 7px;
+    font-size: 1.2rem;
+}
+
+#contents div.search-box input[type=text]{
+    outline: none;
+    padding: 3px 5px;
+    border: 1px solid #9B8181;
 }
 
 

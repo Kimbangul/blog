@@ -31,6 +31,7 @@ class ArticleDao {
         `memberId` = '${args['memberId']}',
         `boardId` = '${args['boardId']}',
         `title` = '${args['title']}',
+        `summary` = '${args['summary']}',
         `body` = '${args['body']}'
         `thumbImgUrl` = '${args['thumbImgUrl']}'
         ";
@@ -79,6 +80,11 @@ class ArticleDao {
             , boardId = '{$args['boardId']}'
             ";
         }
+
+        $sql .= "
+        , `summary` = '{$args['summary']}'
+        ";
+    
         
         $sql .= "
         , thumbImgUrl = '{$args['thumbImgUrl']}'

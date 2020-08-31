@@ -123,12 +123,22 @@ $board = ArticleService::getBoardById($boardId);
   
     </div>
 
+    <div class="con-max-width search-box">
+        <form class="form1 flex flex-ai-c flex-jc-c">
+        <i class="fas fa-search icon"></i>    
+        <div class="form-control">
+             <input type="text" name="title" placeholder="제목을 입력하세요!" value="<?=getArrValue($_REQUEST, 'title', '')?>">
+          </div>
+        </form>
+    
+     </div>
 
     <div class="con-max-width sans count-box flex flex-jc-c">
     <?php for ( $i = 1; $i <= $totalPage; $i++ ) { ?>
         <a class="count flex flex-ai-c flex-jc-c" href="<?=getNewUri($_SERVER['REQUEST_URI'], 'page', $i)?>"><?=$i?></a>
     <?php } ?>
     </div>
+
     
 </section>
     <?php

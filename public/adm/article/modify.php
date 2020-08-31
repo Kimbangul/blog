@@ -106,6 +106,14 @@ function ArticleModifyForm__submit(form) {
                 </td>
             </tr>
             <tr>
+                <th>요약</th>
+                <td>
+                <div class="form-control">
+                    <input type="text" name="summary" placeholder="요약" value="<?=$article['summary']?>">
+                </div>
+                </td>
+            </tr>
+            <tr>
                 <th>본문</th>
                 <td>
                     <div class="form-control">

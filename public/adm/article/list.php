@@ -7,7 +7,7 @@ $pageTitle = '게시물 리스트';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../part/adm/head.php';
 
 $_REQUEST['displayStatus'] = '__ALL__';
-$listData = ArticleService::getForPrintListDataPublic($_REQUEST);
+$listData = ArticleService::getForPrintListData($_REQUEST);
 $articles = $listData['articles'];
 $totalPage = $listData['totalPage'];
 
