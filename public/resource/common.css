@@ -30,14 +30,13 @@
     margin: 0;
     text-decoration: none;
     list-style: none;
+    -webkit-tap-highlight-color: transparent;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     color: inherit;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-     -ms-user-select: none;
-         user-select: none;
 }
+
+
 
 /* 라이브러리 */
 
@@ -45,7 +44,8 @@ a, img{
     display: block;
 }
 
-/* 라이브러리 */
+
+
 
 .toast-youtube-embed {
     background-color:red;
@@ -1320,6 +1320,7 @@ div.detail > div.article_info > div.info-wrap > span{
 div.detail > div.article_info > .article_title{
     font-size: 2.3em;
     margin-bottom: 1.5rem;
+    word-break: keep-all;
 }
 
  div.detail > div.article_info > .article_title::before{
@@ -1341,13 +1342,40 @@ div.detail div#viewer1{
 div.detail div#viewer1 * {
     color:#6C6565;
     font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
 
 
 }
 
-div.detail div#viewer1 h1, div.detail div#viewer1 h2, div.detail div#viewer1 h3{
+div.detail div#viewer1 pre, div.detail div#viewer1 blockquote, div.detail div#viewer1 blockquote p{
+    text-align: left;
+}
+
+div.detail div#viewer1 img{
+    margin: 0 auto;
+}
+
+div.detail div#viewer1 h1, div.detail div#viewer1 h2, div.detail div#viewer1 h3, div.detail div#viewer1 h4, div.detail div#viewer1 h5, div.detail div#viewer1 h6{ 
      font-family: 'SeoulNamsanM','Noto Sans KR', sans-serif;
+     border-bottom: none;
    
+}
+
+div.detail div#viewer1 h1::before, 
+div.detail div#viewer1 h2::before, 
+div.detail div#viewer1 h3::before, 
+div.detail div#viewer1 h4::before, 
+div.detail div#viewer1 h5::before ,
+div.detail div#viewer1 h6::before{
+
+    content: "\f1b0";
+    margin-right: 10px;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    text-rendering: auto;
+    display: inline-block;
+
 }
 
 

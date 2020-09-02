@@ -88,7 +88,7 @@ function ArticleWriteForm__submit(form) {
                 <th>요약</th>
                 <td>
                 <div class="form-control">
-                    <input type="text" name="summary" placeholder="요약" value="<?=$article['summary']?>">
+                    <input type="text" name="summary" placeholder="요약" value="">
                 </div>
                 </td>
             </tr>
